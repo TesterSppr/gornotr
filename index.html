@@ -6,93 +6,80 @@
     <title>Тролльский Генератор 2.0</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #1a1a1a;
-            color: #e0e0e0;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
+            color: #ffffff;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
         }
         h1 {
             color: #ff4444;
-            text-shadow: 2px 2px 5px #000;
         }
         .container {
-            max-width: 800px;
-            width: 100%;
             background-color: #2a2a2a;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
         }
-        .settings {
-            margin-bottom: 20px;
-        }
-        .settings label {
-            margin-right: 10px;
-            color: #bbb;
-        }
-        .settings select, .settings input {
-            background-color: #3a3a3a;
-            color: #e0e0e0;
-            border: 1px solid #555;
-            padding: 5px;
-            border-radius: 5px;
-            margin-right: 10px;
+        label, select, input {
+            margin: 10px 0;
+            display: block;
+            width: 100%;
         }
         button {
             background-color: #ff4444;
-            color: #fff;
+            color: #ffffff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            margin: 10px 0;
         }
         button:hover {
-            background-color: #cc3333;
+            background-color: #ff6666;
         }
-        #output, #history {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 5px;
+        #output {
             margin-top: 20px;
+            padding: 10px;
+            background-color: #333333;
+            border-radius: 5px;
+            min-height: 100px;
+            text-align: left;
             white-space: pre-wrap;
-            word-wrap: break-word;
         }
         #history {
+            margin-top: 20px;
             max-height: 200px;
             overflow-y: auto;
-            border: 1px solid #555;
-        }
-        #history div {
-            padding: 5px;
-            border-bottom: 1px solid #444;
+            background-color: #333333;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Тролльский Генератор 2.0</h1>
-        <div class="settings">
-            <label for="textLength">Длина текста (слов):</label>
-            <input type="number" id="textLength" value="500" min="100" max="3000">
-            <label for="aggressionLevel">Уровень агрессии:</label>
-            <select id="aggressionLevel">
-                <option value="low">Низкий</option>
-                <option value="medium" selected>Средний</option>
-                <option value="high">Высокий</option>
-            </select>
-            <button id="generateButton">Сгенерировать</button>
-        </div>
-        <div id="output">Нажми "Сгенерировать", чтобы получить текст!</div>
+        <label for="textLength">Длина текста (100-3000 слов):</label>
+        <input type="number" id="textLength" value="500" min="100" max="3000">
+        <label for="aggressionLevel">Уровень агрессии:</label>
+        <select id="aggressionLevel">
+            <option value="low">Низкий</option>
+            <option value="medium">Средний</option>
+            <option value="high">Высокий</option>
+        </select>
+        <button id="generateButton">Сгенерировать</button>
+        <div id="output"></div>
         <h2>История генераций</h2>
         <div id="history"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
