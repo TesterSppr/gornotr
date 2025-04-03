@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тролльский Генератор 2.0</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #ff4444;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .settings {
+            margin-bottom: 20px;
+        }
+        .settings label {
+            margin-right: 10px;
+            color: #bbb;
+        }
+        .settings select, .settings input {
+            background-color: #3a3a3a;
+            color: #e0e0e0;
+            border: 1px solid #555;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #ff4444;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #cc3333;
+        }
+        #output, #history {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #history {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #555;
+        }
+        #history div {
+            padding: 5px;
+            border-bottom: 1px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тролльский Генератор 2.0</h1>
+        <div class="settings">
+            <label for="textLength">Длина текста (слов):</label>
+            <input type="number" id="textLength" value="500" min="100" max="3000">
+            <label for="aggressionLevel">Уровень агрессии:</label>
+            <select id="aggressionLevel">
+                <option value="low">Низкий</option>
+                <option value="medium" selected>Средний</option>
+                <option value="high">Высокий</option>
+            </select>
+            <button id="generateButton">Сгенерировать</button>
+        </div>
+        <div id="output">Нажми "Сгенерировать", чтобы получить текст!</div>
+        <h2>История генераций</h2>
+        <div id="history"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
